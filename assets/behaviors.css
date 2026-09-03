@@ -1,0 +1,84 @@
+/*!
+ * Swarm Cloner behavior layer styles. Fidelity-safe by construction: no rule
+ * changes a page's INITIAL rendered state. The nav rule only SHOWS a menu once
+ * the user opens it (never hides one), and the lightbox only exists after a
+ * click. So screenshot-diff of the untouched page is unaffected.
+ */
+
+/* Mobile nav: reveal the menu when the toggle opens it. No hide rule on purpose. */
+[data-bx-nav].bx-open { display: block !important; }
+
+/* Harvested mobile menu (portal content the framework lazy-rendered). Self-styled
+ * dropdown so it does not depend on the site's dialog CSS. No display when closed
+ * (the hidden attr governs), so it never affects the natural screenshot. */
+[data-bx-cloner-menu] { position: fixed; top: 0; left: 0; right: 0; z-index: 9998;
+  background: #fff; color: #111; padding: 68px 22px 22px; gap: 4px;
+  max-height: 100vh; overflow: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.16);
+  flex-direction: column; }
+[data-bx-cloner-menu].bx-open { display: flex !important; }
+[data-bx-cloner-menu] a { display: block; color: #111; text-decoration: none;
+  font: 500 17px/1.3 -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: 13px 4px; border-bottom: 1px solid #eee; }
+[data-bx-cloner-menu] a:hover { color: #b45309; }
+
+/* Desktop nav dropdown (harvested submenu). Positioned under its trigger, shown
+ * only on open, so it never affects the natural screenshot. */
+[data-bx-dropdown-wrap] { position: relative; }
+[data-bx-dropdown] { position: absolute; top: 100%; left: 0; z-index: 9997; min-width: 210px;
+  background: #fff; color: #111; box-shadow: 0 12px 40px rgba(0,0,0,0.16); border-radius: 10px;
+  padding: 8px; gap: 2px; flex-direction: column; }
+[data-bx-dropdown].bx-open { display: flex !important; }
+[data-bx-dropdown] a { display: block; color: #111; text-decoration: none; white-space: nowrap;
+  font: 500 14px/1.3 -apple-system, "Segoe UI", Roboto, sans-serif; padding: 9px 12px; border-radius: 6px; }
+[data-bx-dropdown] a:hover { background: #f3f4f6; color: #b45309; }
+
+/* Accordion fallback + native details: keep collapsed panels hidden. */
+[data-bx-acc-panel][hidden], [data-bx-panel][hidden] { display: none !important; }
+details[data-bx-faq] > summary { cursor: pointer; list-style: none; }
+details[data-bx-faq] > summary::-webkit-details-marker { display: none; }
+
+/* Carousel: convert the slide track to horizontal scroll-snap + prev/next buttons.
+ * The first slide stays first, so the initial view matches the captured state. */
+.bx-carousel { position: relative; }
+.bx-carousel-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.bx-carousel-track::-webkit-scrollbar { display: none; }
+.bx-carousel-slide { scroll-snap-align: start; flex: 0 0 auto; }
+/* Arrows are hover/focus-revealed so the untouched page screenshots pixel-identical.
+ * Touch users swipe the (native-scroll) strip directly. */
+.bx-car-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+  width: 44px; height: 44px; border: none; border-radius: 50%; cursor: pointer;
+  font-size: 26px; line-height: 1; color: #111; background: rgba(255,255,255,0.92);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  opacity: 0; pointer-events: none; transition: opacity 0.15s ease; }
+.bx-carousel:hover .bx-car-btn, .bx-carousel:focus-within .bx-car-btn { opacity: 1; pointer-events: auto; }
+.bx-car-btn:hover { background: #fff; }
+.bx-car-prev { left: 10px; } .bx-car-next { right: 10px; }
+
+/* Gallery lightbox (only rendered after a click; zero initial-state impact). */
+.bx-lightbox {
+  border: none; padding: 0; max-width: 92vw; max-height: 92vh; width: auto;
+  background: transparent; overflow: visible; color: #fff;
+}
+.bx-lightbox::backdrop { background: rgba(8, 8, 10, 0.86); backdrop-filter: blur(2px); }
+.bx-lightbox .bx-lb-img {
+  display: block; max-width: 92vw; max-height: 88vh; width: auto; height: auto;
+  margin: 0 auto; border-radius: 6px; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+.bx-lightbox .bx-lb-close {
+  position: fixed; top: 18px; right: 22px; width: 44px; height: 44px;
+  font-size: 28px; line-height: 1; color: #fff; background: rgba(0, 0, 0, 0.5);
+  border: none; border-radius: 50%; cursor: pointer;
+}
+.bx-lightbox .bx-lb-nav {
+  position: fixed; top: 50%; transform: translateY(-50%); width: 52px; height: 52px;
+  font-size: 34px; line-height: 1; color: #fff; background: rgba(0, 0, 0, 0.4);
+  border: none; border-radius: 50%; cursor: pointer;
+}
+.bx-lightbox .bx-lb-prev { left: 18px; }
+.bx-lightbox .bx-lb-next { right: 18px; }
+.bx-lightbox .bx-lb-close:hover, .bx-lightbox .bx-lb-nav:hover { background: rgba(0, 0, 0, 0.72); }
+@media (prefers-reduced-motion: no-preference) {
+  .bx-lightbox[open] { animation: bx-fade 0.18s ease; }
+  @keyframes bx-fade { from { opacity: 0; } to { opacity: 1; } }
+}

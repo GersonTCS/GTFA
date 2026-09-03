@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["5794"],{36201(E,N,O){O.d(N,{setSchemas:()=>M.R2,isComponentItemType:()=>C,setTitle:()=>M.D6,setLinks:()=>M.Y7,setMetaTags:()=>M.t7});var T=O(12243),e=[T.w.BREADCRUMBS_COMPONENT,T.w.VIDEO_COMPONENT,T.w.GIFT_CARD,T.w.REVIEWS_COMPONENT,T.w.STORES_GALLERY_COMPONENT,T.w.SERVICES_COMPONENT,T.w.RESTAURANTS_MENU_COMPONENT,T.w.PAGINATED_COMPONENT,T.w.EVENTS_LIST_COMPONENT,T.w.IMAGES_COMPONENT,T.w.MEDIA_COMPONENT];function C(E){return e.includes(E)}var M=O(94922)}}]);
+//# sourceMappingURL=seo-api.2561a51e.chunk.min.js.map

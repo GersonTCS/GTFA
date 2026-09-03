@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-go0ep9Gm.js";import{t}from"./GenericHelpMessage-CHAB9CKp.js";var n=e(),r=({error:e})=>{let r=e;if(r?.graphQLErrors?.length>0)return(0,n.jsx)(t,{title:r.graphQLErrors[0]?.message??``});throw e};export{r as errorComponent};

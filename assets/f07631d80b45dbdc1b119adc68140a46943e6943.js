@@ -1,0 +1,1 @@
+import{a as e,r as t}from"./route-BxMNNs8j.js";import{t as n}from"./index-lz-yooQf.js";var r=t(`/_authenticated/$clientHubId`),i=t(`/_external/$clientHubId`);function a(){return e({from:(n().type===`authenticated`?r:i).id})}export{a as t};

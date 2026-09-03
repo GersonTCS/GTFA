@@ -1,0 +1,1 @@
+import{o as e,t}from"./react-tzsNh6-b.js";var n=e(t(),1),r={link:`_8oxipSwiMJQ-`,spinning:`iU2hXJfEJ-E-`};function i({url:e,children:t,ariaLabel:i,ariaExpanded:a,external:o=!1}){return n.createElement(`a`,Object.assign({href:e},o&&{target:`_blank`,rel:`noopener noreferrer`},i&&{"aria-label":i},a&&{"aria-expanded":a},{className:r.link}),t)}export{i as t};

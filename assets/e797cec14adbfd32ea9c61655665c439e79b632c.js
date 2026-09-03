@@ -1,0 +1,2 @@
+"use strict";(self.webpackJsonp__wix_thunderbolt_app=self.webpackJsonp__wix_thunderbolt_app||[]).push([["9270"],{3394(e,n,t){t.d(n,{c:()=>r});let r=(0,t(16473).P)("@wix/viewer-service-site-scroll-blocker")},16473(e,n,t){function r(e){return e}function i(e,n){return n}t.d(n,{P:()=>r,n:()=>i}),i.withConfig=function(){return function(e,n){return n}}}}]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/siteScrollBlocker.d7ac0282.chunk.min.js.map

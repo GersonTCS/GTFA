@@ -1,0 +1,1 @@
+import{b as e}from"./index-lz-yooQf.js";var t=()=>{let t=e();return[`/$clientHubId/public/requests/$requestId/embedded_new`].some(e=>t({fuzzy:!0,to:e}))};export{t};

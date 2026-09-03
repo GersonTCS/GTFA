@@ -1,0 +1,43 @@
+HOW TO EDIT THIS SITE
+=====================
+
+IMPORTANT: This site maintains two copies: one for desktop, one for phone. Every edit must be made in both places. We labeled both copies clearly. Level 3 is where we rebuild it as one file.
+
+Your phone number 737-245-6932 appears in these files:
+  - about/index.html
+  - blank-1/index.html
+  - book-online/index.html
+  - contact/index.html
+  - dispatchform/index.html
+  - freebies/index.html
+  - index.html
+  - m/about/index.html
+  - m/blank-1/index.html
+  - m/book-online/index.html
+  - m/contact/index.html
+  - m/dispatchform/index.html
+  - m/freebies/index.html
+  - m/index.html
+  - m/privacypolicy/index.html
+  - privacypolicy/index.html
+
+Your email gtfainfo@gmail.com appears in these files:
+  - about/index.html
+  - blank-1/index.html
+  - book-online/index.html
+  - contact/index.html
+  - dispatchform/index.html
+  - freebies/index.html
+  - index.html
+  - m/about/index.html
+  - m/blank-1/index.html
+  - m/book-online/index.html
+  - m/contact/index.html
+  - m/dispatchform/index.html
+  - m/freebies/index.html
+  - m/index.html
+  - m/privacypolicy/index.html
+  - privacypolicy/index.html
+
+The .md files and llms.txt are machine copies of the pages. If you edit a page they go stale; ignoring them is safe.
+You own this folder. Plain HTML, no build step. Edit any file with any editor.

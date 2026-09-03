@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "0.1",
+  "provider": "House Manager Services | Georgetown Family Assistants – Georgetown, TX",
+  "url": "https://www.georgetownfamilyassistants.com",
+  "note": "Declarative tool manifest for AI agents (WebMCP-style). Actions are the original form endpoints.",
+  "tools": [
+    {
+      "name": "submit_grab_your_free_copy_of_easy_recipes_for_",
+      "description": "Submit the \"Grab your free copy of Easy Recipes for Every Family.\" form on https://www.georgetownfamilyassistants.com/freebies.",
+      "page": "https://www.georgetownfamilyassistants.com/freebies",
+      "method": "POST",
+      "action": "javascript:void(0)",
+      "parameters": [
+        {
+          "name": "form-field-input-406f3aad-23b4-4e37-6596-c1985b2cf095-comp-mr4nbp50-",
+          "type": "text",
+          "required": true,
+          "label": "Full Name*"
+        },
+        {
+          "name": "form-field-input-5e01e275-bc2a-43d7-8672-cdd61fb82083-comp-mr4nbp50-",
+          "type": "email",
+          "required": true,
+          "label": "Email*"
+        }
+      ]
+    },
+    {
+      "name": "submit_send_us_a_message_before_you_decide_anyt",
+      "description": "Submit the \"Send us a message before you decide anything.\" form on https://www.georgetownfamilyassistants.com/contact.",
+      "page": "https://www.georgetownfamilyassistants.com/contact",
+      "method": "POST",
+      "action": "javascript:void(0)",
+      "parameters": [
+        {
+          "name": "form-field-input-15b7c793-3b49-486e-080d-4a8e340ab6b3-comp-mqq74nzp-",
+          "type": "text",
+          "required": true,
+          "label": "First name*"
+        },
+        {
+          "name": "form-field-input-05c267fc-a993-4fd2-bc5a-d325b744ccb0-comp-mqq74nzp-",
+          "type": "text",
+          "required": true,
+          "label": "Last name*"
+        },
+        {
+          "name": "form-field-input-16de82ea-aa49-4693-043e-37eaded7bb2e-comp-mqq74nzp-",
+          "type": "phone",
+          "required": false,
+          "label": "Mobile Phone"
+        },
+        {
+          "name": "form-field-input-fe5c8c0e-9961-4176-3811-bb24756d8c45-comp-mqq74nzp-",
+          "type": "email",
+          "required": true,
+          "label": "Email*"
+        },
+        {
+          "name": "form-field-input-f5e0969e-b43f-45d5-4d18-57fbe0541e50-comp-mqq74nzp-",
+          "type": "textarea",
+          "required": true,
+          "label": "Your Message*"
+        },
+        {
+          "name": "form-field-input-7a26ce74-c435-41be-9762-405f867811d2-comp-mqq74nzp-",
+          "type": "text",
+          "required": false,
+          "label": "How soon are you looking to get started?"
+        }
+      ]
+    }
+  ]
+}

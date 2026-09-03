@@ -1,0 +1,109 @@
+{
+  "architecture": {
+    "mode": "ua-split",
+    "ambiguous": false,
+    "pages": {
+      "index.html": {
+        "elementRatio": 0.9918,
+        "tagSimilarity": 0.9539,
+        "textSimilarity": 0.9054,
+        "sameDocument": true,
+        "ambiguous": false
+      },
+      "freebies/index.html": {
+        "elementRatio": 0.9365,
+        "tagSimilarity": 0.9648,
+        "textSimilarity": 0.6368,
+        "sameDocument": false,
+        "ambiguous": false
+      },
+      "book-online/index.html": {
+        "elementRatio": 0.9164,
+        "tagSimilarity": 0.9564,
+        "textSimilarity": 0.3462,
+        "sameDocument": false,
+        "ambiguous": false
+      },
+      "contact/index.html": {
+        "elementRatio": 0.9402,
+        "tagSimilarity": 0.967,
+        "textSimilarity": 0.5724,
+        "sameDocument": false,
+        "ambiguous": false
+      },
+      "blank-1/index.html": {
+        "elementRatio": 0.9462,
+        "tagSimilarity": 0.9723,
+        "textSimilarity": 0.9115,
+        "sameDocument": true,
+        "ambiguous": false
+      },
+      "dispatchform/index.html": {
+        "elementRatio": 0.9154,
+        "tagSimilarity": 0.9558,
+        "textSimilarity": 0.2969,
+        "sameDocument": false,
+        "ambiguous": false
+      },
+      "about/index.html": {
+        "elementRatio": 0.9417,
+        "tagSimilarity": 0.97,
+        "textSimilarity": 0.8828,
+        "sameDocument": true,
+        "ambiguous": false
+      },
+      "privacypolicy/index.html": {
+        "elementRatio": 0.9601,
+        "tagSimilarity": 0.9796,
+        "textSimilarity": 0.9568,
+        "sameDocument": true,
+        "ambiguous": false
+      }
+    },
+    "pagesChecked": 8,
+    "enforced": false
+  },
+  "phone": {
+    "value": "737-245-6932",
+    "files": [
+      "about/index.html",
+      "blank-1/index.html",
+      "book-online/index.html",
+      "contact/index.html",
+      "dispatchform/index.html",
+      "freebies/index.html",
+      "index.html",
+      "m/about/index.html",
+      "m/blank-1/index.html",
+      "m/book-online/index.html",
+      "m/contact/index.html",
+      "m/dispatchform/index.html",
+      "m/freebies/index.html",
+      "m/index.html",
+      "m/privacypolicy/index.html",
+      "privacypolicy/index.html"
+    ]
+  },
+  "email": {
+    "value": "gtfainfo@gmail.com",
+    "files": [
+      "about/index.html",
+      "blank-1/index.html",
+      "book-online/index.html",
+      "contact/index.html",
+      "dispatchform/index.html",
+      "freebies/index.html",
+      "index.html",
+      "m/about/index.html",
+      "m/blank-1/index.html",
+      "m/book-online/index.html",
+      "m/contact/index.html",
+      "m/dispatchform/index.html",
+      "m/freebies/index.html",
+      "m/index.html",
+      "m/privacypolicy/index.html",
+      "privacypolicy/index.html"
+    ]
+  },
+  "generatedAt": "2026-07-06T19:23:16.545Z"
+}

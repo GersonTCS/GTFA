@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "0.1",
+  "name": "House Manager Services | Georgetown Family Assistants – Georgetown, TX",
+  "description": "House manager services by Georgetown Family Assistants in Georgetown, TX. Trusted local help for your household.",
+  "url": "https://www.georgetownfamilyassistants.com",
+  "contact": {
+    "phone": "737-245-6932",
+    "email": "gtfainfo@gmail.com"
+  },
+  "content": {
+    "llmsTxt": "/llms.txt",
+    "sitemap": "/sitemap.xml"
+  },
+  "pages": 8
+}

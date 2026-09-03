@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "0.1",
+  "note": "Interactive affordances restored by the behavior layer.",
+  "totals": {
+    "nav": 8,
+    "accordion": 14,
+    "tabs": 0,
+    "gallery": 2,
+    "dropdown": 0,
+    "carousel": 2,
+    "scriptsInerted": 1186
+  },
+  "pages": [
+    {
+      "page": "/index.html",
+      "accordion": 7,
+      "nav": 0,
+      "tabs": 0,
+      "gallery": 1,
+      "dropdown": 0,
+      "carousel": 1
+    },
+    {
+      "page": "/m/about/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    },
+    {
+      "page": "/m/blank-1/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    },
+    {
+      "page": "/m/book-online/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    },
+    {
+      "page": "/m/contact/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    },
+    {
+      "page": "/m/dispatchform/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    },
+    {
+      "page": "/m/freebies/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    },
+    {
+      "page": "/m/index.html",
+      "accordion": 7,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 1,
+      "dropdown": 0,
+      "carousel": 1
+    },
+    {
+      "page": "/m/privacypolicy/index.html",
+      "accordion": 0,
+      "nav": 1,
+      "tabs": 0,
+      "gallery": 0,
+      "dropdown": 0,
+      "carousel": 0
+    }
+  ]
+}

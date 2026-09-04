@@ -1070,20 +1070,36 @@
 .gtfa-form{max-width:520px;margin:0 auto;font-family:alfabet,sans-serif;text-align:left}
 .gtfa-form label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px;color:#373435}
 .gtfa-form input{width:100%;box-sizing:border-box;padding:10px 12px;font-size:15px;font-family:alfabet,sans-serif;border:1px solid #ccc;border-radius:4px}
-.gtfa-form button{margin-top:18px;padding:12px 28px;font-size:16px;font-family:alfabet,sans-serif;background:#1D1D1B;color:#fff;border:none;border-radius:4px;cursor:pointer}
+.gtfa-form button{margin-top:18px;padding:12px 28px;font-size:16px;font-family:alfabet,sans-serif;background:#085486;color:#fff;border:none;border-radius:4px;cursor:pointer}
 .gtfa-form button:hover{opacity:.85}
 .gtfa-form .gtfa-req{color:#b00020}
+.gtfa-note{max-width:520px;margin:14px auto 0;font-family:alfabet,sans-serif;text-align:center;color:#373435;font-size:14px}
+.gtfa-note a{color:#085486;text-decoration:underline}
 </style>
-<form class="gtfa-form" action="https://formsubmit.co/gtfainfo@gmail.com" method="POST" aria-label="Lead Magnet (Recipes)">
+<form class="gtfa-form" id="gtfa-freebies-form" action="https://formsubmit.co/gtfainfo@gmail.com" method="POST" aria-label="Lead Magnet (Recipes)">
 <input type="hidden" name="_subject" value="New freebies request from georgetownfamilyassistants.com">
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://www.georgetownfamilyassistants.com/freebies-thank-you">
 <label for="gtfa-full-name">Full Name<span class="gtfa-req">*</span></label>
 <input id="gtfa-full-name" type="text" name="Full Name" required>
 <label for="gtfa-fb-email">Email<span class="gtfa-req">*</span></label>
 <input id="gtfa-fb-email" type="email" name="Email" required>
-<button type="submit">Send Me the Recipes</button>
+<button type="submit">Send Me The Recipes</button>
+<p class="gtfa-note" id="gtfa-freebies-note" hidden>Your recipes are opening in a new tab. If nothing happened, <a href="https://drive.google.com/file/d/11LOMAhRnrAaGqQbqrTdCoynxXhtas1ZW/view?usp=sharing" target="_blank" rel="noopener">click here</a>.</p>
 </form>
+<script>
+(function(){
+var form=document.getElementById('gtfa-freebies-form');
+var note=document.getElementById('gtfa-freebies-note');
+var recipesUrl='https://drive.google.com/file/d/11LOMAhRnrAaGqQbqrTdCoynxXhtas1ZW/view?usp=sharing';
+if(!form)return;
+form.addEventListener('submit',function(e){
+e.preventDefault();
+window.open(recipesUrl,'_blank','noopener');
+if(note)note.hidden=false;
+fetch('https://formsubmit.co/ajax/gtfainfo@gmail.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).catch(function(){});
+});
+})();
+</script>
 </div><div id="comp-mr4nf3mv" class="N8MGzv _v6ohL PO9MfV comp-mr4nf3mv wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:12px; line-height:1.8em; text-align:center;"><span style="font-style:italic;" class="wixui-rich-text__text"><span style="font-size:12px;" class="wixui-rich-text__text"><span style="font-weight:normal;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">We'll never share your email. Unsubscribe anytime.</span></span></span></span></p></div><div id="comp-mr4n76523" class="N8MGzv _v6ohL PO9MfV comp-mr4n76523 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; text-align:center; font-size:13px;">If you ever need a hand with more than just the cooking, we're here.&nbsp;<span class="color_43 wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><a href="../../m/index.html" target="_self" data-anchor="anchors-mnlsrhia1" class="wixui-rich-text__text">Learn About Our Services</a></span>.</span></span></p></div></div></div></section></div></div></div></div></div></div></main><footer id="SITE_FOOTER" class="MLzr0a SITE_FOOTER wixui-footer" tabindex="-1"><div class="uZIV9d"><div id="bgLayers_SITE_FOOTER" data-hook="bgLayers" data-motion-part="BG_LAYER SITE_FOOTER" class="QG9w8P XzOkCb"><div data-testid="colorUnderlay" class="LNYVZi ayCf9D"></div><div id="bgMedia_SITE_FOOTER" data-motion-part="BG_MEDIA SITE_FOOTER" class="ROWgFb"></div></div><div class="ncI7Xj"></div></div><div class="XKFSfx"><div data-mesh-id="SITE_FOOTERinlineContent" data-testid="inline-content" class=""><div data-mesh-id="SITE_FOOTERinlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-mpfgv1ok" class="N8MGzv _v6ohL PO9MfV comp-mpfgv1ok wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:33px;"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-size:33px;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Contact Us</span></span></span></p></div><div id="comp-mpfgv1ol2" class="W4V2qg comp-mpfgv1ol2 wixui-image" title="location-pointer-pin-icon-design-in-blue"><div data-testid="linkElement" class="apPOZK"><img loading="lazy" sizes="35px" srcset="../../assets/f9fccfd6ec08f84c7d61e43e78d35e38694c0f23.avif 1x" id="img_comp-mpfgv1ol2" src="../../assets/f9fccfd6ec08f84c7d61e43e78d35e38694c0f23.avif" alt="" style="object-fit:cover" class="gRkIq0 sFiSiq" width="35" height="35" decoding="async"></div></div><div id="comp-mpfgv1oz" class="N8MGzv _v6ohL PO9MfV comp-mpfgv1oz wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:11px;"><span style="font-size:11px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Address</span></span></span></p>
 
 <p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:11px;"><span style="font-size:11px;" class="wixui-rich-text__text"><span style="font-weight:normal;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Georgetown Texas, USA</span></span></span></p></div><div id="comp-mpfgv1p9" class="W4V2qg comp-mpfgv1p9 wixui-image"><div data-testid="linkElement" class="apPOZK"><img loading="lazy" sizes="35px" srcset="../../assets/6be28e5af25f315728930b94f1bdd77f4684df47.avif 1x" id="img_comp-mpfgv1p9" src="../../assets/6be28e5af25f315728930b94f1bdd77f4684df47.avif" alt="f207045d96c258fed664305f0ac2c5bd-telephone-handset-blue-icon.webp" style="object-fit:cover" class="gRkIq0 sFiSiq" width="35" height="35" decoding="async"></div></div><div id="comp-mpfgv1pa3" class="N8MGzv _v6ohL PO9MfV comp-mpfgv1pa3 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:11px;"><span style="font-size:11px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Phone</span></span></span></p>

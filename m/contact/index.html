@@ -1057,11 +1057,14 @@
 .gtfa-form button{margin-top:18px;padding:12px 28px;font-size:16px;font-family:alfabet,sans-serif;background:#1D1D1B;color:#fff;border:none;border-radius:4px;cursor:pointer}
 .gtfa-form button:hover{opacity:.85}
 .gtfa-form .gtfa-req{color:#b00020}
+.gtfa-success{max-width:520px;margin:0 auto;font-family:alfabet,sans-serif;text-align:center;color:#373435}
+.gtfa-success p{font-size:16px;line-height:1.6em;margin:0 0 14px}
+.gtfa-success a{color:#373435;text-decoration:underline}
+.gtfa-error{max-width:520px;margin:14px auto 0;font-family:alfabet,sans-serif;text-align:center;color:#b00020;font-size:14px}
 </style>
-<form class="gtfa-form" action="https://formsubmit.co/gtfainfo@gmail.com" method="POST" aria-label="Contact Us">
+<form class="gtfa-form" id="gtfa-contact-form" action="https://formsubmit.co/gtfainfo@gmail.com" method="POST" aria-label="Contact Us">
 <input type="hidden" name="_subject" value="New message from georgetownfamilyassistants.com contact form">
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://www.georgetownfamilyassistants.com/contact-thank-you">
 <label for="gtfa-full-name">Full Name<span class="gtfa-req">*</span></label>
 <input id="gtfa-full-name" type="text" name="Full Name" required>
 <label for="gtfa-phone">Mobile Phone</label>
@@ -1071,7 +1074,31 @@
 <label for="gtfa-message">Your Message</label>
 <textarea id="gtfa-message" name="Your Message"></textarea>
 <button type="submit">Send My Message</button>
+<p class="gtfa-error" id="gtfa-contact-error" hidden>Something went wrong sending your message. Please call us directly at <a href="tel:+17372456932">737-245-6932</a> or email <a href="mailto:gtfainfo@gmail.com">gtfainfo@gmail.com</a>.</p>
 </form>
+<div class="gtfa-success" id="gtfa-contact-success" hidden>
+<p>Got it! Thanks for reaching out.</p>
+<p>A member of the Georgetown Family Assistants team will call you within 24 hours to learn more about what you need. In the meantime, feel free to reach us at <a href="tel:+17372456932">737-245-6932</a>.</p>
+</div>
+<script>
+(function(){
+var form=document.getElementById('gtfa-contact-form');
+var success=document.getElementById('gtfa-contact-success');
+var error=document.getElementById('gtfa-contact-error');
+if(!form)return;
+form.addEventListener('submit',function(e){
+e.preventDefault();
+if(error)error.hidden=true;
+fetch('https://formsubmit.co/ajax/gtfainfo@gmail.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(res){
+if(!res.ok)throw new Error('bad status');
+form.hidden=true;
+success.hidden=false;
+}).catch(function(){
+if(error)error.hidden=false;
+});
+});
+})();
+</script>
 </div></div></div></section></div></div></div></div></div></div></main><footer id="SITE_FOOTER" class="MLzr0a SITE_FOOTER wixui-footer" tabindex="-1"><div class="uZIV9d"><div id="bgLayers_SITE_FOOTER" data-hook="bgLayers" data-motion-part="BG_LAYER SITE_FOOTER" class="QG9w8P XzOkCb"><div data-testid="colorUnderlay" class="LNYVZi ayCf9D"></div><div id="bgMedia_SITE_FOOTER" data-motion-part="BG_MEDIA SITE_FOOTER" class="ROWgFb"></div></div><div class="ncI7Xj"></div></div><div class="XKFSfx"><div data-mesh-id="SITE_FOOTERinlineContent" data-testid="inline-content" class=""><div data-mesh-id="SITE_FOOTERinlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-mpfgv1ok" class="N8MGzv _v6ohL PO9MfV comp-mpfgv1ok wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:33px;"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-size:33px;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Contact Us</span></span></span></p></div><div id="comp-mpfgv1ol2" class="W4V2qg comp-mpfgv1ol2 wixui-image" title="location-pointer-pin-icon-design-in-blue"><div data-testid="linkElement" class="apPOZK"><img loading="lazy" sizes="35px" srcset="../../assets/f9fccfd6ec08f84c7d61e43e78d35e38694c0f23.avif 1x" id="img_comp-mpfgv1ol2" src="../../assets/f9fccfd6ec08f84c7d61e43e78d35e38694c0f23.avif" alt="" style="object-fit:cover" class="gRkIq0 sFiSiq" width="35" height="35" decoding="async"></div></div><div id="comp-mpfgv1oz" class="N8MGzv _v6ohL PO9MfV comp-mpfgv1oz wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:11px;"><span style="font-size:11px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Address</span></span></span></p>
 
 <p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:11px;"><span style="font-size:11px;" class="wixui-rich-text__text"><span style="font-weight:normal;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Georgetown Texas, USA</span></span></span></p></div><div id="comp-mpfgv1p9" class="W4V2qg comp-mpfgv1p9 wixui-image"><div data-testid="linkElement" class="apPOZK"><img loading="lazy" sizes="35px" srcset="../../assets/6be28e5af25f315728930b94f1bdd77f4684df47.avif 1x" id="img_comp-mpfgv1p9" src="../../assets/6be28e5af25f315728930b94f1bdd77f4684df47.avif" alt="f207045d96c258fed664305f0ac2c5bd-telephone-handset-blue-icon.webp" style="object-fit:cover" class="gRkIq0 sFiSiq" width="35" height="35" decoding="async"></div></div><div id="comp-mpfgv1pa3" class="N8MGzv _v6ohL PO9MfV comp-mpfgv1pa3 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:11px;"><span style="font-size:11px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:alfabet,sans-serif;" class="wixui-rich-text__text">Phone</span></span></span></p>

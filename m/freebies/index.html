@@ -1091,12 +1091,14 @@
 var form=document.getElementById('gtfa-freebies-form');
 var note=document.getElementById('gtfa-freebies-note');
 var recipesUrl='https://drive.google.com/file/d/11LOMAhRnrAaGqQbqrTdCoynxXhtas1ZW/view?usp=sharing';
+var sheetUrl='https://script.google.com/macros/s/AKfycbwiALLdfphYiiWKvmfXK6hdiZD3F3nbfnXpDH4UMkoo-MZEjs41Cn_2UhzSs7J3kTfzVA/exec';
 if(!form)return;
 form.addEventListener('submit',function(e){
 e.preventDefault();
 window.open(recipesUrl,'_blank','noopener');
 if(note)note.hidden=false;
 fetch('https://formsubmit.co/ajax/gtfainfo@gmail.com',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).catch(function(){});
+fetch(sheetUrl,{method:'POST',mode:'no-cors',body:new FormData(form)}).catch(function(){});
 });
 })();
 </script>

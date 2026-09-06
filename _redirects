@@ -6,3 +6,7 @@
 /m/book-online/*           /m/              301
 /m/dispatchform            /m/              301
 /m/dispatchform/*          /m/              301
+/blank-1                   /                301
+/blank-1/*                 /                301
+/m/blank-1                 /m/              301
+/m/blank-1/*               /m/              301

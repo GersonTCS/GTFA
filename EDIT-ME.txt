@@ -5,12 +5,10 @@ IMPORTANT: This site maintains two copies: one for desktop, one for phone. Every
 
 Your phone number 737-245-6932 appears in these files:
   - about/index.html
-  - blank-1/index.html
   - contact/index.html
   - freebies/index.html
   - index.html
   - m/about/index.html
-  - m/blank-1/index.html
   - m/contact/index.html
   - m/freebies/index.html
   - m/index.html
@@ -19,12 +17,10 @@ Your phone number 737-245-6932 appears in these files:
 
 Your email gtfainfo@gmail.com appears in these files:
   - about/index.html
-  - blank-1/index.html
   - contact/index.html
   - freebies/index.html
   - index.html
   - m/about/index.html
-  - m/blank-1/index.html
   - m/contact/index.html
   - m/freebies/index.html
   - m/index.html

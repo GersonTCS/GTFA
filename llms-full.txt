@@ -2,14 +2,6 @@
 
 > House manager services by Georgetown Family Assistants in Georgetown, TX. Trusted local help for your household.
 
-# Book Online | Georgetown Family Assistants
-URL: https://www.georgetownfamilyassistants.com/book-online
-Type: contact
-
-
-
----
-
 # Freebies | Georgetown Family Assistants
 URL: https://www.georgetownfamilyassistants.com/freebies
 Type: page
@@ -71,14 +63,6 @@ Type: home
 ### Can my assistant drive me to appointments?
 ### How do I book?
 ### What areas do you serve?
-
----
-
-# Dispatch Form
-URL: https://www.georgetownfamilyassistants.com/dispatchform
-Type: page
-
-
 
 ---
 

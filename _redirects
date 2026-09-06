@@ -1,0 +1,8 @@
+/book-online              /                301
+/book-online/*             /                301
+/dispatchform              /                301
+/dispatchform/*            /                301
+/m/book-online             /m/              301
+/m/book-online/*           /m/              301
+/m/dispatchform            /m/              301
+/m/dispatchform/*          /m/              301

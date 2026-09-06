@@ -19,19 +19,6 @@ Type: contact
 
 ---
 
-# Accessibility Statement | Georgetown Family Assistants
-URL: https://www.georgetownfamilyassistants.com/blank-1
-Type: page
-
-# Accessibility Statement
-## What web accessibility is
-## Accessibility adjustments on this site
-## Declaration of partial compliance with the standard due to third-party content [only add if relevant]
-## Accessibility arrangements in the organization [only add if relevant]
-## Requests, issues, and suggestions
-
----
-
 # About Us | Georgetown Family Assistants
 URL: https://www.georgetownfamilyassistants.com/about
 Type: about

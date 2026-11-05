@@ -1,0 +1,310 @@
+<!-- The Celiac Space quiz: paste this whole block into an HTML / custom code embed. -->
+<div id="tcs-med">
+<style>
+  #tcs-med {
+    --bg: #FFF2D4;
+    --card: #ffffff;
+    --ink: #373435;
+    --muted: #5f5a56;
+    --line: #E2DBCB;
+    --brand: #F1AE29;
+    --brand-ink: #ffffff;
+    --brand-soft: #FFF2D4;
+    --ok: #2e7d4f;
+    --ok-soft: #e4f3ea;
+    --warn: #f2b705;
+    --warn-ink: #373435;
+    --warn-soft: #FFF2D4;
+    --stop: #d32f2f;
+    --stop-soft: #fde8e8;
+    --accent-ink: #9A6206;
+    --yes: #FF8200;
+    --soft: #F6F2EA;
+    --radius: 14px;
+  }
+  #tcs-med * { box-sizing: border-box; }
+  #tcs-med { margin: 0; }
+  #tcs-med {
+    background: transparent;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  #tcs-med .quiz {
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 24px rgba(55, 52, 53, 0.08);
+    padding: 32px 28px 24px;
+  }
+  #tcs-med .screen { display: none; }
+  #tcs-med .screen.active { display: block; animation: med-fade .2s ease; }
+  @keyframes med-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  #tcs-med .eyebrow {
+    font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent-ink); margin: 0 0 6px;
+  }
+  #tcs-med h1, #tcs-med h2 { margin: 0 0 12px; line-height: 1.25; }
+  #tcs-med h1 { font-size: 28px; }
+  #tcs-med h2 { font-size: 22px; }
+  #tcs-med p { margin: 0 0 12px; color: var(--muted); }
+  #tcs-med a { color: var(--accent-ink); }
+  #tcs-med ul.ingredients {
+    list-style: none; padding: 0; margin: 4px 0 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px;
+  }
+  #tcs-med ul.ingredients li { position: relative; padding-left: 16px; color: var(--ink); }
+  #tcs-med ul.ingredients li::before {
+    content: ""; position: absolute; left: 2px; top: .62em;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--brand);
+  }
+  @media (max-width: 420px) { #tcs-med ul.ingredients { grid-template-columns: 1fr; } }
+  #tcs-med .actions { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  #tcs-med .actions.row { flex-direction: row; }
+  #tcs-med .actions.row .btn { flex: 1; }
+  #tcs-med .btn {
+    appearance: none; border: 2px solid var(--brand); border-radius: 10px;
+    background: var(--brand); color: var(--brand-ink);
+    font: inherit; font-weight: 600; font-size: 16px;
+    padding: 12px 18px; cursor: pointer; text-align: center; text-decoration: none;
+    display: inline-block; transition: background .15s, color .15s, transform .05s;
+  }
+  #tcs-med .btn:hover { filter: brightness(1.05); }
+  #tcs-med .btn:active { transform: translateY(1px); }
+  #tcs-med .btn.yes { background: var(--yes); border-color: var(--yes); }
+  #tcs-med .btn.secondary { background: var(--card); color: var(--accent-ink); }
+  #tcs-med .btn.secondary:hover { background: var(--brand-soft); filter: none; }
+  #tcs-med .btn:focus-visible, #tcs-med .nav-btn:focus-visible { outline: 3px solid #F1AE29; outline-offset: 2px; }
+  #tcs-med .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--line);
+  }
+  #tcs-med .nav-btn {
+    appearance: none; background: none; border: none; padding: 6px 4px;
+    font: inherit; font-size: 15px; font-weight: 600; color: var(--muted); cursor: pointer;
+    border-radius: 6px;
+  }
+  #tcs-med .nav-btn:hover { color: var(--ink); }
+  #tcs-med .result-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin: 0 0 16px;
+  }
+  #tcs-med .result-icon svg { width: 40px; height: 40px; }
+  #tcs-med .result-icon.ok { background: var(--ok-soft); }
+  #tcs-med .result-icon.warn { background: var(--warn-soft); }
+  #tcs-med .result-icon.stop { background: var(--stop-soft); }
+  #tcs-med .result.ok h2 { color: var(--ok); }
+  #tcs-med .result.warn h2 { color: var(--warn-ink); }
+  #tcs-med .result.stop h2 { color: var(--stop); }
+  #tcs-med .disclaimer {
+    font-size: 13px; color: var(--muted); background: var(--soft);
+    border-radius: 8px; padding: 10px 12px; margin: 16px 0 0;
+  }
+  #tcs-med h1:focus, #tcs-med h2:focus { outline: none; }
+  #tcs-med .start { text-align: center; padding: 16px 0 8px; }
+  #tcs-med .start .actions { align-items: center; }
+  #tcs-med .start .btn { min-width: 240px; }
+</style>
+<main class="quiz" aria-live="polite">
+
+  <!-- Screen 1: Start -->
+  <section class="screen start active" id="med-s1" data-nav="none">
+    <h1>Is Your Medication Gluten-Free?</h1>
+    <p>Answer a few quick questions to check your medication's ingredients.</p>
+    <div class="actions">
+      <button class="btn" data-go="med-s2">Check My Medication</button>
+    </div>
+  </section>
+
+  <!-- Screen 2 -->
+  <section class="screen" id="med-s2">
+    <p class="eyebrow">Step 1</p>
+    <h2>Can you find the inactive ingredients?</h2>
+    <div class="actions">
+      <button class="btn secondary" data-go="med-s3">I can't find them</button>
+      <button class="btn" data-go="med-s5">I found them</button>
+    </div>
+  </section>
+
+  <!-- Screen 3 -->
+  <section class="screen" id="med-s3">
+    <p class="eyebrow">Finding ingredients</p>
+    <h2>What type of medication is this?</h2>
+    <div class="actions">
+      <button class="btn" data-go="med-s4-1">OTC (over the counter)</button>
+      <button class="btn" data-go="med-s4-2">Prescription</button>
+    </div>
+  </section>
+
+  <!-- Screen 4.1 -->
+  <section class="screen" id="med-s4-1" data-nav="back">
+    <p class="eyebrow">Over the Counter Medications</p>
+    <h2>How to find inactive ingredients</h2>
+    <p>The inactive ingredients will be listed on the packaging under the &lsquo;active ingredients&rsquo; line.</p>
+    <p>You can also search online for product information if you don&rsquo;t have the packaging.</p>
+    <div class="actions">
+      <button class="btn" data-go="med-s5">Ingredients Found</button>
+      <button class="btn secondary" data-restart>Start Over</button>
+    </div>
+  </section>
+
+  <!-- Screen 4.2 -->
+  <section class="screen" id="med-s4-2" data-nav="back">
+    <p class="eyebrow">Prescription Medications</p>
+    <h2>How to find inactive ingredients</h2>
+    <p>The inactive ingredients will be listed on the packaging, the patient information leaflet, or you can ask your pharmacist.</p>
+    <p>You can also use <a href="https://dailymed.nlm.nih.gov/dailymed/index.cfm" target="_blank" rel="noopener">DailyMed</a> to find information for each medication.</p>
+    <div class="actions">
+      <a class="btn secondary" href="https://dailymed.nlm.nih.gov/dailymed/index.cfm" target="_blank" rel="noopener">Visit Medication Website</a>
+      <button class="btn" data-go="med-s5">Ingredients Found</button>
+      <button class="btn secondary" data-restart>Start Over</button>
+    </div>
+  </section>
+
+  <!-- Screen 5 -->
+  <section class="screen" id="med-s5">
+    <p class="eyebrow">Check the ingredients</p>
+    <h2>Does it have any of these ingredients?</h2>
+    <ul class="ingredients">
+      <li>Barley</li>
+      <li>Bulgur</li>
+      <li>Hydrolyzed wheat protein</li>
+      <li>Modified wheat starch</li>
+      <li>Wheat bran</li>
+      <li>Wheat flour</li>
+      <li>Wheat germ</li>
+      <li>Wheat starch</li>
+    </ul>
+    <div class="actions row">
+      <button class="btn" data-go="med-s5-2">No</button>
+      <button class="btn yes" data-go="med-s8">Yes</button>
+    </div>
+  </section>
+
+  <!-- Screen 5.2 -->
+  <section class="screen" id="med-s5-2">
+    <p class="eyebrow">Check the ingredients</p>
+    <h2>Does it have any of these ingredients?</h2>
+    <ul class="ingredients">
+      <li>Brown rice syrup</li>
+      <li>Dextrin</li>
+      <li>Grain extract</li>
+      <li>Malt</li>
+      <li>Modified food starch</li>
+      <li>Natural flavor</li>
+      <li>Oats</li>
+      <li>Pre-gelatinized starch</li>
+      <li>Starch</li>
+      <li>Yeast extract</li>
+    </ul>
+    <div class="actions row">
+      <button class="btn" data-go="med-s6-1">No</button>
+      <button class="btn yes" data-go="med-s6-2">Yes</button>
+    </div>
+  </section>
+
+  <!-- Screen 6.2 -->
+  <section class="screen" id="med-s6-2">
+    <p class="eyebrow">One more question</p>
+    <h2>Does it have a Gluten-Free claim on the package?</h2>
+    <p>This would only apply to OTC medications.</p>
+    <div class="actions row">
+      <button class="btn" data-go="med-s7">No</button>
+      <button class="btn yes" data-go="med-s6-1">Yes</button>
+    </div>
+  </section>
+
+  <!-- Screen 6.1: Gluten-free -->
+  <section class="screen result ok" id="med-s6-1" data-nav="back">
+    <div class="result-icon ok" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h2>It's gluten-free</h2>
+    <p>This product doesn&rsquo;t contain any gluten ingredients or ingredients that may be derived from gluten.</p>
+    <p class="disclaimer">*This quiz is for informational purposes only. Always check with your healthcare provider or pharmacist to ensure your medication is gluten-free.</p>
+    <div class="actions">
+      <a class="btn" href="https://theceliacspace.softr.app/guide-k7m2x9?category=Medications" target="_blank" rel="noopener">Medication Database</a>
+      <button class="btn secondary" data-restart>Start Over</button>
+    </div>
+  </section>
+
+  <!-- Screen 7: May contain gluten (yellow caution) -->
+  <section class="screen result warn" id="med-s7" data-nav="back">
+    <div class="result-icon warn" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M10.27 3.99a2 2 0 0 1 3.46 0l8.02 13.9A2 2 0 0 1 20.02 21H3.98a2 2 0 0 1-1.73-3.11z" fill="#f2b705"/><path d="M12 9v4.5" stroke="#3a2c00" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1.2" fill="#3a2c00"/></svg>
+    </div>
+    <h2>This product may contain gluten</h2>
+    <p>While it doesn&rsquo;t contain any ingredients that are definitely gluten, it contains ingredients that may be derived from gluten. We recommend contacting your doctor for an alternative.</p>
+    <p class="disclaimer">*This quiz is for informational purposes only. Always check with your healthcare provider or pharmacist to ensure your medication is gluten-free.</p>
+    <div class="actions">
+      <a class="btn" href="https://theceliacspace.softr.app/guide-k7m2x9?category=Medications" target="_blank" rel="noopener">Medication Database</a>
+      <a class="btn secondary" href="https://dailymed.nlm.nih.gov/dailymed/index.cfm" target="_blank" rel="noopener">Visit Medication Website</a>
+      <button class="btn secondary" data-restart>Start Over</button>
+    </div>
+  </section>
+
+  <!-- Screen 8: Not gluten-free (red hand) -->
+  <section class="screen result stop" id="med-s8" data-nav="back">
+    <div class="result-icon stop" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+    </div>
+    <h2>This product is NOT gluten-free</h2>
+    <p>Looking for a gluten-free alternative? Check out our Medication Database.</p>
+    <p class="disclaimer">*This quiz is for informational purposes only. Always check with your healthcare provider or pharmacist to ensure your medication is gluten-free.</p>
+    <div class="actions">
+      <a class="btn" href="https://theceliacspace.softr.app/guide-k7m2x9?category=Medications" target="_blank" rel="noopener">Medication Database</a>
+      <button class="btn secondary" data-restart>Start Over</button>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  var root = document.getElementById('tcs-med');
+  var history = [];
+  var current = 'med-s1';
+
+  // Add Back / Start Over controls to every screen except the start screen.
+  // data-nav="back" = screen already has its own Start Over button, so only add Back.
+  root.querySelectorAll('.screen').forEach(function (s) {
+    var mode = s.getAttribute('data-nav');
+    if (mode === 'none') return;
+    var nav = document.createElement('div');
+    nav.className = 'nav';
+    nav.innerHTML = '<button class="nav-btn" data-back>&larr; Back</button>' +
+      (mode === 'back' ? '<span></span>' : '<button class="nav-btn" data-restart>Start Over</button>');
+    s.appendChild(nav);
+  });
+
+  function show(id) {
+    document.getElementById(current).classList.remove('active');
+    document.getElementById(id).classList.add('active');
+    current = id;
+    var h = document.querySelector('#' + id + ' h1, #' + id + ' h2');
+    if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+    root.scrollIntoView({ block: 'start' });
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-go],[data-back],[data-restart]');
+    if (!t || !root.contains(t)) return;
+    if (t.hasAttribute('data-go')) {
+      history.push(current);
+      show(t.getAttribute('data-go'));
+    } else if (t.hasAttribute('data-back')) {
+      show(history.length ? history.pop() : 'med-s1');
+    } else {
+      history = [];
+      show('med-s1');
+    }
+  });
+})();
+</script>
+</div>

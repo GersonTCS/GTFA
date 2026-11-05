@@ -14,7 +14,7 @@
     --muted: #5f5a56;
     --line: #E2DBCB;
     --brand: #F1AE29;
-    --brand-ink: #373435;
+    --brand-ink: #ffffff;
     --brand-soft: #FFF2D4;
     --ok: #2e7d4f;
     --ok-soft: #e4f3ea;
@@ -24,6 +24,7 @@
     --stop: #d32f2f;
     --stop-soft: #fde8e8;
     --accent-ink: #9A6206;
+    --yes: #B86E00;
     --soft: #F6F2EA;
     --radius: 14px;
   }
@@ -87,6 +88,7 @@
   }
   .btn:hover { filter: brightness(1.05); }
   .btn:active { transform: translateY(1px); }
+  .btn.yes { background: var(--yes); border-color: var(--yes); }
   .btn.secondary { background: var(--card); color: var(--accent-ink); }
   .btn.secondary:hover { background: var(--brand-soft); filter: none; }
   .btn:focus-visible, .nav-btn:focus-visible { outline: 3px solid #F1AE29; outline-offset: 2px; }
@@ -197,7 +199,7 @@
     </ul>
     <div class="actions row">
       <button class="btn" data-go="s5-2">No</button>
-      <button class="btn" data-go="s8">Yes</button>
+      <button class="btn yes" data-go="s8">Yes</button>
     </div>
   </section>
 
@@ -219,7 +221,7 @@
     </ul>
     <div class="actions row">
       <button class="btn" data-go="s6-1">No</button>
-      <button class="btn" data-go="s6-2">Yes</button>
+      <button class="btn yes" data-go="s6-2">Yes</button>
     </div>
   </section>
 
@@ -230,7 +232,7 @@
     <p>This would only apply to OTC medications.</p>
     <div class="actions row">
       <button class="btn" data-go="s7">No</button>
-      <button class="btn" data-go="s6-1">Yes</button>
+      <button class="btn yes" data-go="s6-1">Yes</button>
     </div>
   </section>
 

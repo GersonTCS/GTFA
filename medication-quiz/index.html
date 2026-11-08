@@ -134,27 +134,27 @@
     <h1>Is Your Medication Gluten-Free?</h1>
     <p>Answer a few quick questions to check your medication's ingredients.</p>
     <div class="actions">
-      <button class="btn" data-go="s2">Check My Medication</button>
+      <button class="btn" data-go="s3">Check My Medication</button>
     </div>
   </section>
 
   <!-- Screen 2 -->
   <section class="screen" id="s2">
-    <p class="eyebrow">Step 1</p>
+    <p class="eyebrow">Step 2</p>
     <h2>Can you find the inactive ingredients?</h2>
     <div class="actions">
-      <button class="btn secondary" data-go="s3">I can't find them</button>
+      <button class="btn secondary" data-go-otc="s4-1" data-go-rx="s4-2">I can't find them</button>
       <button class="btn" data-go="s5">I found them</button>
     </div>
   </section>
 
   <!-- Screen 3 -->
   <section class="screen" id="s3">
-    <p class="eyebrow">Finding ingredients</p>
+    <p class="eyebrow">Step 1</p>
     <h2>What type of medication is this?</h2>
     <div class="actions">
-      <button class="btn" data-go="s4-1">OTC (over the counter)</button>
-      <button class="btn" data-go="s4-2">Prescription</button>
+      <button class="btn" data-type="otc" data-go="s2">OTC (over the counter)</button>
+      <button class="btn" data-type="rx" data-go="s2">Prescription</button>
     </div>
   </section>
 
@@ -216,12 +216,13 @@
       <li>Natural flavor</li>
       <li>Oats</li>
       <li>Pre-gelatinized starch</li>
+      <li>Sodium starch glycolate</li>
       <li>Starch</li>
       <li>Yeast extract</li>
     </ul>
     <div class="actions row">
       <button class="btn" data-go="s6-1">No</button>
-      <button class="btn yes" data-go="s6-2">Yes</button>
+      <button class="btn yes" data-go-otc="s6-2" data-go-rx="s9">Yes</button>
     </div>
   </section>
 
@@ -229,7 +230,6 @@
   <section class="screen" id="s6-2">
     <p class="eyebrow">One more question</p>
     <h2>Does it have a Gluten-Free claim on the package?</h2>
-    <p>This would only apply to OTC medications.</p>
     <div class="actions row">
       <button class="btn" data-go="s7">No</button>
       <button class="btn yes" data-go="s6-1">Yes</button>
@@ -242,7 +242,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
     </div>
     <h2>It's gluten-free</h2>
-    <p>This product doesn&rsquo;t contain any gluten ingredients or ingredients that may be derived from gluten.</p>
+    <p>Based on your answers, this medication doesn&rsquo;t contain gluten. Either it has no gluten ingredients, or the manufacturer has confirmed it&rsquo;s gluten-free.</p>
     <p class="disclaimer">*This quiz is for informational purposes only. Always check with your healthcare provider or pharmacist to ensure your medication is gluten-free.</p>
     <div class="actions">
       <a class="btn" href="https://theceliacspace.softr.app/guide-k7m2x9?category=Medications" target="_blank" rel="noopener">Medication Database</a>
@@ -261,6 +261,21 @@
     <div class="actions">
       <a class="btn" href="https://theceliacspace.softr.app/guide-k7m2x9?category=Medications" target="_blank" rel="noopener">Medication Database</a>
       <a class="btn secondary" href="https://dailymed.nlm.nih.gov/dailymed/index.cfm" target="_blank" rel="noopener">Visit Medication Website</a>
+      <button class="btn secondary" data-restart>Start Over</button>
+    </div>
+  </section>
+
+  <!-- Screen 9: Prescription + may contain -->
+  <section class="screen result warn" id="s9" data-nav="back">
+    <div class="result-icon warn" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M10.27 3.99a2 2 0 0 1 3.46 0l8.02 13.9A2 2 0 0 1 20.02 21H3.98a2 2 0 0 1-1.73-3.11z" fill="#f2b705"/><path d="M12 9v4.5" stroke="#3a2c00" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1.2" fill="#3a2c00"/></svg>
+    </div>
+    <h2>Check with your pharmacist</h2>
+    <p>This medication has an ingredient that can come from wheat or barley, but most of the time it comes from corn or potato. Ask your pharmacist: &ldquo;Can you confirm the source of the starch or other ingredients in this medication?&rdquo; They can contact the manufacturer if needed.</p>
+    <p><strong>Don&rsquo;t stop taking a prescription without talking to your doctor first.</strong></p>
+    <p class="disclaimer">*This quiz is for informational purposes only. Always check with your healthcare provider or pharmacist to ensure your medication is gluten-free.</p>
+    <div class="actions">
+      <a class="btn" href="https://theceliacspace.softr.app/guide-k7m2x9?category=Medications" target="_blank" rel="noopener">Medication Database</a>
       <button class="btn secondary" data-restart>Start Over</button>
     </div>
   </section>
@@ -285,6 +300,7 @@
 (function () {
   var history = [];
   var current = 's1';
+  var medType = null; // 'otc' or 'rx', chosen on the medication type screen
 
   // Add Back / Start Over controls to every screen except the start screen.
   // data-nav="back" = screen already has its own Start Over button, so only add Back.
@@ -308,15 +324,18 @@
   }
 
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-go],[data-back],[data-restart]');
+    var t = e.target.closest('[data-go],[data-go-otc],[data-back],[data-restart]');
     if (!t) return;
-    if (t.hasAttribute('data-go')) {
+    if (t.hasAttribute('data-go') || t.hasAttribute('data-go-otc')) {
+      if (t.hasAttribute('data-type')) medType = t.getAttribute('data-type');
+      var next = t.getAttribute('data-go') || t.getAttribute(medType === 'rx' ? 'data-go-rx' : 'data-go-otc');
       history.push(current);
-      show(t.getAttribute('data-go'));
+      show(next);
     } else if (t.hasAttribute('data-back')) {
       show(history.length ? history.pop() : 's1');
     } else {
       history = [];
+      medType = null;
       show('s1');
     }
   });
